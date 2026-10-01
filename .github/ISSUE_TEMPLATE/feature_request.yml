@@ -1,0 +1,15 @@
+name: Feature request
+description: Suggest a new tool or improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What would you like to ask Claude that you can't today?
+    validations:
+      required: true
+  - type: input
+    id: method
+    attributes:
+      label: Bing Webmaster API method (if you know it)
+      placeholder: "e.g. GetChildrenUrlInfo"

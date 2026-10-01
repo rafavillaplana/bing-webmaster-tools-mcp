@@ -1,0 +1,60 @@
+{
+  "manifest_version": "0.2",
+  "name": "bing-webmaster-tools-mcp",
+  "display_name": "Bing Webmaster Tools",
+  "version": "0.0.0",
+  "description": "Ask Claude about your Bing search performance, crawling, links, sitemaps and keywords.",
+  "long_description": "Read-only connector for Bing Webmaster Tools. Uses your own API key and runs entirely on your computer: Claude talks to the official Bing Webmaster API on your behalf and nothing goes through third-party servers.\n\nIncludes performance by query and page, query↔page breakdowns, traffic trends, crawl stats and issues, URL index status, sitemaps, inbound links and Bing keyword research.",
+  "author": {
+    "name": "Rafa Villaplana",
+    "url": "https://rafavillaplana.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafavillaplana/bing-webmaster-tools-mcp"
+  },
+  "homepage": "https://github.com/rafavillaplana/bing-webmaster-tools-mcp",
+  "support": "https://github.com/rafavillaplana/bing-webmaster-tools-mcp/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/dist/index.js"
+      ],
+      "env": {
+        "BING_WEBMASTER_API_KEY": "${user_config.api_key}"
+      }
+    }
+  },
+  "tools": [],
+  "keywords": [
+    "bing",
+    "seo",
+    "webmaster",
+    "search console",
+    "analytics"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=20.0.0"
+    }
+  },
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "Bing Webmaster Tools API key",
+      "description": "Bing Webmaster Tools → Settings → API access → API Key → Generate. One key covers all your verified sites.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}
